@@ -1,44 +1,41 @@
-# 🛒 E-Commerce Customer Satisfaction (CSAT) Intelligence Engine
+🛒 Flipkart Customer Satisfaction (CSAT) Intelligence Engine
+📖 Project Overview
+This project delivers an end-to-end Machine Learning pipeline to analyze and predict customer satisfaction for Flipkart. By analyzing over 100,000 support interactions, we identifies the key drivers behind 5-star ratings and provides actionable insights to reduce customer churn.
 
-## 📖 Project Overview
+The project is contained within a single, comprehensive Jupyter Notebook that covers everything from Data Wrangling and Statistical Hypothesis Testing to Advanced Ensemble Modeling.
 
-This project builds an end-to-end data science workflow to analyze customer support interactions and predict satisfaction scores. It performs deep Exploratory Data Analysis (EDA) on over 85,000 support tickets. It utilizes a Random Forest Regressor to identify the key drivers behind customer sentiment (CSAT), helping to optimize agent training and shift allocation.
+🚀 Notebook Workflow
+The project follows a structured Data Science Lifecycle:
 
-## 🛠️ Tech Stack
+Data Inspection & Cleaning: Handling 60%+ missing values and treating outliers in connected_handling_time using Winsorization.
 
-* **Language:** Python (Pandas, NumPy)
-* **Machine Learning:** Scikit-Learn (Random Forest Regressor)
-* **Visualization:** Matplotlib, Seaborn
-* **Data Source:** Customer Support Dataset (CSV)
+Exploratory Data Analysis (EDA): 15+ visualizations covering Univariate, Bivariate, and Multivariate analysis.
 
-## 📂 Files Description
+Hypothesis Testing: Using T-Tests and Chi-Square tests to statistically validate feature importance.
 
-* **`EDA PART.py`**: Python script that handles data cleaning, univariate/bivariate analysis, and generates visualization plots for agent and channel performance.
-* **`#ML PART.py`**: The machine learning pipeline that performs One-Hot Encoding, splits training data, trains the Random Forest model, and calculates feature importance.
-* **`Customer_support_data.csv`**: The source dataset containing support interaction logs.
-* **`top_10_drivers_ml.png`**: Visual output showing the most critical factors (e.g., Return Requests) impacting customer satisfaction.
-* **`csat_vs_agent_shift.png`**: Visualization comparing agent performance across Morning, Evening, and Split shifts.
-* **`channel_distribution.png`**: Chart displaying the volume of interactions across Inbound, Outcall, and Email channels.
+Feature Engineering: One-Hot Encoding categorical variables and applying Log Transformations to skewed data.
 
-## 🚀 How to Run
+Handling Imbalance: Utilizing SMOTE (Synthetic Minority Over-sampling Technique) to balance the target classes.
 
-1.  **Install Dependencies**
-    ```bash
-    pip install pandas numpy matplotlib seaborn scikit-learn
-    ```
+Machine Learning: Comparative analysis between Random Forest, XGBoost, and Logistic Regression.
 
-2.  **Run EDA Pipeline**
-    ```bash
-    python "EDA PART.py"
-    ```
+Model Tuning: Optimization via GridSearchCV to maximize F1-Score and Recall.
 
-3.  **Run Machine Learning Model**
-    ```bash
-    python "#ML PART.py"
-    ```
+🛠️ Tech Stack
+Language: Python 3.12
 
-## 📊 Key Insights
+Libraries: Pandas, NumPy, Scipy (Stats), Matplotlib, Seaborn
 
-* **Driver Analysis:** Identified that **Return Requests** are the single highest predictor of customer satisfaction scores, outweighing agent tenure.
-* **Channel Volume:** Visualized that **Inbound Calls** dominate support volume, but **Email** channels show higher variance in satisfaction.
-* **Workforce Optimization:** Discovered performance gaps in **Split Shifts** compared to standard Morning/Evening shifts, suggesting actionable areas for workforce management.
+Machine Learning: Scikit-Learn, XGBoost, Imbalanced-Learn (SMOTE)
+
+📊 Key Business Insights
+Experience Gap: Agent tenure is a critical predictor; "Veteran" agents (>90 days) achieve significantly higher 5-star rates.
+
+Efficiency Paradox: Data shows that extremely long calls correlate with lower satisfaction, highlighting a need for better real-time support for complex queries.
+
+Channel Strategy: Digital channels (Chat/Inbound) show higher efficiency and satisfaction potential compared to traditional Email.
+
+📈 Final Model Results
+Best Model: Tuned XGBoost
+
+Focus Metric: Recall (ensuring we identify as many dissatisfied customers as possible for service recovery).
